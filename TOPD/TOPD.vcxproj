@@ -114,6 +114,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.32.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -121,16 +124,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="LoginForm.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="RoundedButton.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LoginForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="RoundedButton.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>

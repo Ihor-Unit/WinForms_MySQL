@@ -21,6 +21,8 @@ private:
 
 	void Container_BackColorChanged(Object^ sender, EventArgs^ e);
 
+	void Button_Resize(Object^ sender, EventArgs^ e);
+
 
 	int borderSize = 0;
 	int borderRadius = 40;

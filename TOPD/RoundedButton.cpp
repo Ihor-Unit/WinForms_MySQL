@@ -1,11 +1,19 @@
 #include "RoundedButton.h"
 
 RoundedButton::RoundedButton(){
+	Button::Button();
 	this->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 	this->FlatAppearance->BorderSize = 0;
 	this->Size = System::Drawing::Size(150, 40);
 	this->BackColor = Color::MediumSlateBlue;
 	this->ForeColor = Color::White;
+	this->Resize += gcnew EventHandler(this, &RoundedButton::Button_Resize);
+}
+
+void RoundedButton::Button_Resize(Object^ sender, EventArgs^ e){
+	if (borderRadius > this->Height) {
+		borderRadius = this->Height;
+	}
 }
 
 GraphicsPath^ RoundedButton::GetFigurePath(RectangleF rect, float radius){
@@ -26,7 +34,7 @@ void RoundedButton::OnPaint(PaintEventArgs^ e) {
 	e->Graphics->SmoothingMode = SmoothingMode::AntiAlias;
 
 	RectangleF rectSurface = RectangleF(0, 0, this->Width, this->Height);
-	RectangleF rectBorder  = RectangleF(1, 1, this->Width - 0.8f, this->Height - 1);
+	RectangleF rectBorder  = RectangleF::Inflate(rectSurface, -borderSize, -borderSize);
 	
 	if (borderRadius > 2) {//rounded button
 		GraphicsPath^ pathSurface = GetFigurePath(rectSurface, borderRadius);
@@ -61,9 +69,7 @@ void RoundedButton::OnPaint(PaintEventArgs^ e) {
 }
 
 void RoundedButton::Container_BackColorChanged(Object^ sender, EventArgs^ e) {
-	if (this->DesignMode) {
-		this->Invalidate();
-	}
+	this->Invalidate();
 }	
 
 void RoundedButton::OnHandleCreated(EventArgs^ e){

@@ -21,12 +21,18 @@
     <ClCompile Include="RoundedButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LoginForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RoundedButton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoginForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

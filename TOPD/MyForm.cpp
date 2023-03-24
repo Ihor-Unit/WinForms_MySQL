@@ -1,20 +1,7 @@
 #include "MyForm.h"
-
-using namespace System;
-using namespace System::Windows::Forms;
-using namespace System::Data::SqlClient;
-
-using namespace System::Drawing;
 using namespace System::Drawing::Drawing2D;
+using namespace System::Drawing;
 
-[STAThreadAttribute]
-void Main(array<String^>^ args) {
-    Application::EnableVisualStyles();
-    Application::SetCompatibleTextRenderingDefault(false);
-    //WinformCDemo is your project name
-    TOPD::MyForm BaseForm;
-    Application::Run(%BaseForm);
-}
 
 GraphicsPath^ GetFigurePath(RectangleF rect, float radius) {
 	GraphicsPath^ path = gcnew GraphicsPath();
@@ -26,4 +13,9 @@ GraphicsPath^ GetFigurePath(RectangleF rect, float radius) {
 	path->CloseFigure();
 
 	return path;
+}
+
+System::Void MakeFigureRounded()
+{
+	return System::Void();
 }
