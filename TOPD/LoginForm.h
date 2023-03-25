@@ -59,7 +59,7 @@ namespace TOPD {
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::Label^ label5;
 
-		   String^ passwd = gcnew String(L'*', 0);
+		   String^ passwd = gcnew String(L'●', 0);
 		   String^ serverIP = "localhost";
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Panel^ panel2;
@@ -280,9 +280,9 @@ namespace TOPD {
 			int pos = textBox2->Text->Length - 1;
 			String^ ins = Convert::ToString(textBox2->Text[pos]);
 
-			if (ins[0] != L'*') passwd = gcnew String(passwd + ins);
+			if (ins[0] != L'●') passwd = gcnew String(passwd + ins);
 
-			String^ stars = gcnew String(L'*', textBox2->Text->Length);
+			String^ stars = gcnew String(L'●', textBox2->Text->Length);
 			textBox2->Text = stars;
 			textBox2->SelectionStart = textBox2->Text->Length;
 		}
@@ -312,7 +312,7 @@ namespace TOPD {
 		}
 		else {
 			label4->Visible = true;
-			passwd = gcnew String(L'*', 0);
+			passwd = gcnew String(L'●', 0);
 		}
 	}
 	private: System::Void button1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
