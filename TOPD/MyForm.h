@@ -82,7 +82,7 @@ namespace TOPD {
 		/// </summary>
 		System::ComponentModel::Container^ components;
 
-		
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -108,7 +108,7 @@ namespace TOPD {
 			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->button1->FlatAppearance->BorderSize = 0;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Location = System::Drawing::Point(813, 447);
+			this->button1->Location = System::Drawing::Point(77, 120);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(209, 58);
 			this->button1->TabIndex = 1;
@@ -126,7 +126,7 @@ namespace TOPD {
 			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->EnableHeadersVisualStyles = false;
-			this->dataGridView1->Location = System::Drawing::Point(44, 36);
+			this->dataGridView1->Location = System::Drawing::Point(549, 477);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
@@ -154,7 +154,7 @@ namespace TOPD {
 			legend1->Name = L"Legend1";
 			legend1->TitleBackColor = System::Drawing::SystemColors::Control;
 			this->chart1->Legends->Add(legend1);
-			this->chart1->Location = System::Drawing::Point(1430, 36);
+			this->chart1->Location = System::Drawing::Point(1472, 40);
 			this->chart1->Name = L"chart1";
 			series1->BackImageTransparentColor = System::Drawing::SystemColors::Control;
 			series1->BackSecondaryColor = System::Drawing::SystemColors::Control;
@@ -200,8 +200,8 @@ namespace TOPD {
 
 		}
 #pragma endregion
-	
-	
+
+
 	private: System::Void button1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 		//GraphicsPath^ buttonPath = gcnew GraphicsPath;
 		//Rectangle newRectangle = button1->ClientRectangle;
@@ -252,14 +252,14 @@ namespace TOPD {
 			e->Graphics->SmoothingMode = SmoothingMode::HighQuality;
 			//Button surface
 			GraphicsPath^ pathSurface = GetFigurePath(rectSurface, borderRadius);
-			
+
 			Pen^ penSurface = gcnew Pen(button1->Parent->BackColor, 2);
-			
+
 			//Button surface
 			button1->Region = gcnew System::Drawing::Region(pathSurface);
 			//Draw surface border for HD result
 			e->Graphics->DrawPath(penSurface, pathSurface);
-			
+
 		}
 	}
 	private: System::Void MyForm_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
@@ -268,7 +268,7 @@ namespace TOPD {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		MySqlConnection^ conn = gcnew MySqlConnection(this->connStr);
 		conn->Open();
-		
+
 		//MySqlCommand^ cmd = gcnew MySqlCommand(L"SELECT patients.id_no AS ID, patients.full_name AS Повне_імя, patients.age AS Вік, patients.gender AS Стать, patients.disease AS Хвороба, bills.amount AS Сума, doctors.full_name AS Імя_доктора, patients.room_no AS Палата, rooms.room_type AS Тип_палати FROM patients LEFT JOIN bills ON patients.bill_no = bills.bill_no LEFT JOIN doctors ON patients.doctor_id = doctors.doctor_id LEFT JOIN rooms ON patients.room_no = rooms.room_no", conn);
 		//
 		//// execute the command and retrieve the data
@@ -288,11 +288,11 @@ namespace TOPD {
 
 		MySqlDataAdapter^ da = gcnew MySqlDataAdapter(L"SELECT patients.id_no AS ID, patients.full_name AS Повне_імя, patients.age AS Вік, patients.gender AS Стать, patients.disease AS Хвороба, bills.amount AS Сума, doctors.full_name AS Імя_доктора, patients.room_no AS Палата, rooms.room_type AS Тип_палати FROM patients LEFT JOIN bills ON patients.bill_no = bills.bill_no LEFT JOIN doctors ON patients.doctor_id = doctors.doctor_id LEFT JOIN rooms ON patients.room_no = rooms.room_no", conn);
 		DataTable^ dt = gcnew DataTable();
-		
+
 		da->Fill(dt);
-		
+
 		dataGridView1->DataSource = dt;
-		
+
 		for (int row = 0; row < dataGridView1->RowCount; row++) {
 			// iterate through the columns of the current row
 			for (int col = 0; col < dataGridView1->ColumnCount; col++) {
@@ -304,10 +304,10 @@ namespace TOPD {
 		}
 	}
 	private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-		
+
 	}
 	private: System::Void chart1_Click(System::Object^ sender, System::EventArgs^ e) {
-		
+
 	}
 	private: System::Void chart1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 		MakeFigureRounded(chart1, e);
@@ -315,5 +315,5 @@ namespace TOPD {
 	private: System::Void dataGridView1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 		MakeFigureRounded(dataGridView1, e);
 	}
-};
+	};
 }

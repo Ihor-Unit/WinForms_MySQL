@@ -187,7 +187,7 @@ namespace TOPD {
 			   // 
 			   this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			   this->panel1->Location = System::Drawing::Point(222, 300);
+			   this->panel1->Location = System::Drawing::Point(222, 302);
 			   this->panel1->Name = L"panel1";
 			   this->panel1->Size = System::Drawing::Size(220, 8);
 			   this->panel1->TabIndex = 4;
@@ -196,7 +196,7 @@ namespace TOPD {
 			   // 
 			   this->panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			   this->panel2->Location = System::Drawing::Point(222, 199);
+			   this->panel2->Location = System::Drawing::Point(222, 201);
 			   this->panel2->Name = L"panel2";
 			   this->panel2->Size = System::Drawing::Size(220, 8);
 			   this->panel2->TabIndex = 4;
@@ -205,7 +205,7 @@ namespace TOPD {
 			   // 
 			   this->panel3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				   static_cast<System::Int32>(static_cast<System::Byte>(255)));
-			   this->panel3->Location = System::Drawing::Point(222, 73);
+			   this->panel3->Location = System::Drawing::Point(222, 75);
 			   this->panel3->Name = L"panel3";
 			   this->panel3->Size = System::Drawing::Size(220, 8);
 			   this->panel3->TabIndex = 4;
