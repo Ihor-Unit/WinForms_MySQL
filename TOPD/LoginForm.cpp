@@ -2,6 +2,8 @@
 #include <vcclr.h>
 #include <msclr/marshal_cppstd.h>
 
+#include "MyForm.h"
+
 using namespace System;
 using namespace System::Windows::Forms;
 
@@ -14,6 +16,7 @@ void Main(array<String^>^ args) {
     Application::SetCompatibleTextRenderingDefault(false);
 
     TOPD::LoginForm LoginForm;
+    //TOPD::MyForm LoginForm;
 
     Application::Run(%LoginForm);
 }

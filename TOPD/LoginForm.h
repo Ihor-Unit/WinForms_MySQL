@@ -312,6 +312,11 @@ namespace TOPD {
 		}
 		else {
 			label4->Visible = true;
+
+			textBox1->Text = "";
+			textBox2->Text = "";
+			passwd = "";
+
 			passwd = gcnew String(L'●', 0);
 		}
 	}
